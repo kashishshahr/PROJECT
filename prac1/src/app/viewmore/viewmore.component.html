@@ -1,16 +1,14 @@
 <mat-card class="example-card">
   <mat-card-header>
     <mat-card-title>{{name}}</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    <br><mat-card-subtitle>Price:<font style="color:chartreuse;">{{price}}</font></mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="http://localhost:3000/images/user.png" alt="Photo of a Shiba Inu">
-  <mat-card-content>
+  <a href='http://localhost:3000/images/{{img}}' title="click">
+    <img src='http://localhost:3000/images/{{img}}' width=100px height=100px>
+  </a> <mat-card-content>
     <p>
 
     </p>
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
+
 </mat-card>

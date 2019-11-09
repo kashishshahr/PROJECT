@@ -18,6 +18,9 @@ import { MatCheckboxModule,MatPaginatorModule,MatFormFieldModule, MatTableModule
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, FormControl } from '@angular/forms';
 import { ViewmoreComponent } from './viewmore/viewmore.component';
+import { ProductsComponent } from './products/products/products.component';
+import { ProductAddComponent } from './products/product-add/product-add.component';
+import { ProductEditComponent } from './products/product-edit/product-edit.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { ViewmoreComponent } from './viewmore/viewmore.component';
     SignupAddComponent,
     SignupEditComponent,
     MainNavComponent,
-    ViewmoreComponent
+    ViewmoreComponent,
+    ProductsComponent,
+    ProductAddComponent,
+    ProductEditComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +57,6 @@ import { ViewmoreComponent } from './viewmore/viewmore.component';
     MatSortModule,
     MatCheckboxModule,
     MatCardModule,
-
     FormsModule
   ],
   entryComponents:[

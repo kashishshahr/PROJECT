@@ -1,0 +1,27 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+
+<form #f="ngForm" (submit)="onSubmit(f)">
+  <input ngModel name="product_name" #pname class="form-control" type="string" placeholder="Enter product Name"><br>
+  <input ngModel name="product_price" #pprice class="form-control" type="number" placeholder="Enter product Price"><br>
+  <input ngModel name="product_qty" #pqty class="form-control" type="number" placeholder="Enter product Qty"><br><br>
+  <input ngModel name="product_mfg" #pmfg class="form-control" type="Date" placeholder="Enter product mfg Date"><br><br>
+  <textarea  ngModel name="product_desc" #pdesc  class="form-control" placeholder="Enter Product Description"></textarea><br><br>
+  <input  ngModel name="product_img"  #pimg type='file' (change)="onChange($event)"><br><br>
+
+  <!-- <input ngModel name="fk_cat_id" #pfk_cat_id class="form-control"type="number" placeholder="Enter product fk_id"><br> -->
+
+  <select ngModel name="fk_cat_id" #pfk_cat_id class="form-control" >
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+  </select>
+
+  <button class="btn btn-primary" type="submit">Submit</button>
+  <button class="btn btn-primary" (click)="onCancel()">Cancel</button>
+
+</form>
+

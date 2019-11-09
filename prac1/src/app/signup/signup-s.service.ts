@@ -13,9 +13,11 @@ private url:string="http://localhost:3000/signup/";
    return this._http.get(this.url);
   }
   addSignUpData(item){
-    let x = new HttpHeaders().set('Content-type', 'application/json');
-    let body=JSON.stringify(item)
-    return this._http.post(this.url,body,{headers:x});
+    // let x = new HttpHeaders().set('Content-type', 'application/json');
+    // let body=JSON.stringify(item)
+    // return this._http.post(this.url,body,{headers:x});
+
+    return this._http.post(this.url, item);
   }
   deleteSignupData(id){
 

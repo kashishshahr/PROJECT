@@ -1,38 +1,59 @@
-
-
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body bgcolor="yellow">
-<form >
-  <div class="form-group">
-        <mat-form-field class="example-full-width">
-          <input matInput #message maxlength="256" placeholder="Enter you name">
-          <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
-          <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+
+<h1><span style="font-family: Times New Roman;">New Customer</span></h1>
+
+<div class="container">
+  <form (ngSubmit)="onSignupAdd(f)" #f="ngForm">
+    <br>
+    <div class="form-group">
+      <input required name="name" #name="ngModel" id="name_signup" ngModel type="text" placeholder="Enter Your name"
+        class="form-control">
+            <div class="namerequired">Name is required</div>
+
+    </div>
+    <div class="example-container">
+        <mat-form-field>
+          <input matInput name="email" #email="ngModel" ngModel placeholder="Enter your email"  required>
+          <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
         </mat-form-field>
       </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <!-- <div class="form-group">
+      <label required for="exampleInputEmail1">Email address</label>
+      <input name="Email" required #e="ngModel" ngModel type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Enter email">
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <div class="namerequired" *ngIf="e.hasError('required')">Email is required</div>
+        <div class="namerequired" *ngIf="e.hasError('email')">Valid Email is required</div>
+
+
+    </div> -->
+    <div  class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required type="password"
+         name="password" ngModel class="form-control" id="p" placeholder="Password">
+        <div class="namerequired">
+      <small id="passwordHelp" class="form-text text-muted" >
+        "Must contain at least one number and one uppercase and
+        lowercase letter, and at least 8 or more characters"</small>
+      </div>
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="p" placeholder="Password">
-    </div>
-    <div  class="form-group">
       <label for="exampleInputPassword1">COnfirm Password</label>
-      <input  type="password" class="form-control" id="cp" placeholder="COnfirmPassword">
+      <input required type="Password" class="form-control" name="signup_confirm_password" ngModel id="cp"
+        placeholder="COnfirmPassword">
     </div>
     <div>
-    <mat-form-field class="example-full-width">
+      <mat-form-field class="example-full-width">
         <span matPrefix>+91 &nbsp;</span>
-        <input type="tel" matInput placeholder="Telephone">
+        <input required maxlength=10 type="tel" matInput class="form-control" name="mobno" ngModel
+          placeholder="Telephone">
         <mat-icon matSuffix>mode_edit</mat-icon>
       </mat-form-field>
+
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
-</body>
-  <!-- {"name":"c3","password":"c","mobno":3,"email":"4" -->
+</div>

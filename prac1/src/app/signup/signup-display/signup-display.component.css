@@ -6,7 +6,10 @@ table {
   font-size: 14px;
   width: 100%;
 }
-
+.body
+{
+background-color: yellowgreen;
+}
 td, th {
   width: 20%;
 }

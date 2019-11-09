@@ -14,7 +14,7 @@ import { ViewmoreComponent } from 'src/app/viewmore/viewmore.component';
 export class SignupDisplayComponent implements OnInit {
   signupArr: signUpClass[] = [];
 
-  displayedColumns: string[] = ['checkColumn', 'name', 'password', 'mobno', 'email', 'action', 'viewmore'];
+  displayedColumns: string[] = ['checkColumn', 'name', 'mobno', 'email', 'action', 'viewmore'];
   dataSource: MatTableDataSource<signUpClass>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -88,7 +88,7 @@ export class SignupDisplayComponent implements OnInit {
     // let x: number = this.selecteditems.indexOf(item);
     //if (this.selectflag == true) {
     if (this.selecteditems.includes(item)) {
-      this.selecteditems.splice(item, 1);
+      this.selecteditems.splice(this.selecteditems.indexOf(item), 1);
       console.log("includes");
       console.log(item);
     }
@@ -121,6 +121,6 @@ export class SignupDisplayComponent implements OnInit {
   }
   onEdit() {
 
-    this._router.navigate(['signupAdd']);
+    this._router.navigate(['signupEdit']);
   }
 }

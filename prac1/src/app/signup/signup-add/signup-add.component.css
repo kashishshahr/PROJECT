@@ -5,3 +5,10 @@
 .body{
   background-color: yellow;
 }
+h1{color:rgb(196, 77, 97);
+text-align: center;
+}
+div.namerequired
+{
+  color: red;
+}

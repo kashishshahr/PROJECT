@@ -1,0 +1,21 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<form (submit)="onSubmit(f)" #f=ngForm>
+  <div>
+    dd
+    <input #pid name="product_id" type="number" [(ngModel)]="product_id" value="{{product_id}}" readonly class="form-control"><br>
+    <input #pname name="product_name" type="text" [(ngModel)]="product_name" value="{{product_name}}" class="form-control"><br>
+    <input #pprice name="product_price" type="number" [(ngModel)]="product_price" value="{{product_price}}" class="form-control"><br>
+    <input #pqty name="product_qty" type="number" [(ngModel)]="product_qty" value="{{product_qty}}" class="form-control"><br>
+    <input #pmfg name="product_mfg" type="date" [(ngModel)]="product_mfg" value="{{product_mfg}}" class="form-control"><br>
+    <input #pdesc name="product_desc" type="text" [(ngModel)]="product_desc" value="{{product_desc}}" class="form-control"><br>
+    <input (change)=onChange($event) #pimg name="product_img" type="file" [(ngModel)]="product_img" value="{{product_img}}" class="form-control"><br>
+    <input #pfk_cat_id name="fk_cat_id" type="number" [(ngModel)]="fk_cat_id" value="{{fk_cat_id}}" class="form-control"><br>
+
+    <button class="btn btn-primary"  type="submit">Save</button>
+    <button class="btn btn-danger" (click)="onCancel()">cancel</button>
+  </div>
+</form>

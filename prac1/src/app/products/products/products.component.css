@@ -1,0 +1,23 @@
+.p{
+  background-color: green;
+  color:gold;
+}
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+.body
+{
+background-color: yellowgreen;
+}
+td, th {
+  width: 20%;
+}
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
